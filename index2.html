@@ -20,28 +20,7 @@
     }
 
     .info-box {
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      z-index: 10;
-      max-width: 360px;
-      padding: 12px 14px;
-      border-radius: 12px;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(4px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-      line-height: 1.4;
-    }
-
-    .info-box h1 {
-      margin: 0 0 6px;
-      font-size: 18px;
-    }
-
-    .info-box p {
-      margin: 0;
-      font-size: 14px;
-      opacity: 0.95;
+      display: none; /* Eliminar el cartel */
     }
 
     .custom-hotspot {
@@ -75,14 +54,16 @@
     .pnlm-about-msg {
       display: none !important;
     }
+
+    /* Estilo para pantallas móviles */
+    @media (max-width: 768px) {
+      #panorama {
+        height: 60vh; /* Reduce la altura en pantallas pequeñas */
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="info-box">
-    <h1>Lleida desde la torre de la Seu Vella</h1>
-    <p>Panorámica interactiva con algunos puntos de interés. Arrastra para moverte y haz clic en los hot spots para ver una breve descripción.</p>
-  </div>
-
   <div id="panorama"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
@@ -180,7 +161,6 @@
           }
         },
 
-
         {
           pitch: 18,
           yaw: -6,
@@ -191,7 +171,6 @@
             text: 'En este campus que toma el nombre del barrio se encuentran los modenos edificios universitarios de del Centro de Cultura, diferentes facultades y Escuela Politécnica.'
           }
         },
-
 
         {
           pitch: 23,
@@ -204,7 +183,6 @@
           }
         },
 
-
         {
           pitch: 28.5,
           yaw: -11.11,
@@ -215,8 +193,6 @@
             text: 'Vía que se une a la autopista AP-2 que conecta Zaragoza con Tarragona.'
           }
         },
-
-
 
         {
           pitch: -2.9,
@@ -229,8 +205,6 @@
           }
         },
 
-
-
         {
           pitch: 17.4,
           yaw: 62,
@@ -241,7 +215,6 @@
             text: 'Barrio residencial relativamente moderno que se caracteriza por tener una de las rentas más altas de España (segundo detrás de la Moraleja). Está conformado por viviendas unifamiliares de alto standing y habitado por empresarios y funcionarios asociados al sector agropecuario.'
           }
         },
-
 
         {
           pitch: 13,
@@ -285,7 +258,6 @@
             text: 'Con capacidad para unos 13.000 espectadores y es propiedad del Ayuntamiento'
           }
         },
-
 
         {
           pitch: 1,
@@ -338,7 +310,7 @@
           }
         }
       ]
-    }); 
+    });
 
     // Mostrar coordenadas pitch y yaw al hacer clic
     viewer.on('mousedown', function(event) {
