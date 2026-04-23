@@ -12,6 +12,8 @@ Metodología para crear y publicar un panorama a partir de varias fotografías
 
 En el viaje de Geografía a Jaca pudimos visitar al regreso la ciudad de Lleida. Algunos, entre los que me encuentro pudimos subir a la torre campanario de base octogonal con sus 200 escalones. Desde arriba fui haciendo fotografías por cada uno de sus 8 caras. En principio no tenía ninguna intención de crear ningún panorama. Sólo quería tener una fotografía de cada parte de la ciudad.
 
+![](img/torre.png) 
+
 Más tarde me planteé crear un panorama con las fotografías. Ya se que muchas cámaras de los móviles permiten hacerlo, pero el resultado no es tan satisfactorio.
 
 Si hubiese tenido claro desde el principio que es lo que quería me hubiese planteado una metodología más apropiada con:
