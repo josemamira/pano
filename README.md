@@ -22,7 +22,7 @@ Si hubiese tenido claro desde el principio que es lo que quería me hubiese plan
 
 - fotografía realizada a la misma distancia focal (sin hacer diferente zoom a cada foto)
 - evitar que aparezcan por los laterales de la fotografía partes de la propia torre
-![](articulo_pano_html_fbe16523.jpg) ![Forma 1](articulo_pano_html_4aa49d70.gif)  
+![](img/img1.jpg)
 - mantener la misma horizontal en todas la fotos (se necesita trípode)
 - seguir una secuencia ordenada de fotografías. Es recomendable realizar la primera foto al sur para que el norte en el panorama quede en el centro de la imagen. Esto ayuda mucho a interpretar las orientaciones en la imagen, además de que en la página web se puede utilizar la utilidad para ver la orientación
  
@@ -51,11 +51,11 @@ Esta utilidad consta de 3 pasos:
 
 1. Carga de las fotografías: no tiene ningún secreto. Una vez cargadas intenta hacer una panorama rápido
 
-![](articulo_pano_html_d34133e.png)  
+![](img/img2.png)  
   
 2. Alienado: Alinea todas las imágenes, crea puntos de control y optimiza las posiciones de las imágenes. Se trata de un proceso automático y muy eficiente
 
-![](articulo_pano_html_f0c4fed4.png)  
+![](img/img3.png)  
   
 Opcionalmente se pueden realizar operaciones como:
 
@@ -66,7 +66,7 @@ Opcionalmente se pueden realizar operaciones como:
 
 3. Generación del panorama en un ficheros. La salida será un fichero en formato TIFF. Este es el resultado
 
-![](articulo_pano_html_1b14f7c2.jpg)  
+![](img/lleida.jpg)  
 
 Obviamente la salida tiene errores de bulto como parte del torreón en los laterales y en parte de la ciudad. No obstante, y para las pocas precauciones que tomé me parece más que satisfactorio.
 
@@ -86,7 +86,7 @@ Cada hot spot precisa de 2 elementos claves, como es su “Pitch” y “Yaw”.
 
 He optado por crearlos a mano añadiendo una pequeña utilidad en el código (con javascript) que al hacer clic en la imagen me permite obtener el valor de pitch y yaw en la consola del navegador (se activa con F12 en el caso del navegador Firefox.
 
-![](articulo_pano_html_af8efee5.png)  
+![](img/img4.png)  
 
 Estos valores los utilizo para crear hot spot en el código fuente. Cada uno de ellos tiene este contenido en una estructura en formato JSON (a algunos me imagino que les recordará a nuestro GeoJSON)
 
