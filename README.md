@@ -1,12 +1,8 @@
-# pano
+# CREACIÓN Y PUBLICACIÓN DE PANORAMAS
+
 Metodología para crear y publicar un panorama a partir de varias fotografías
 
-
 **Crear un panorama utilizando varias fotografía con solape con Hugin y visualizándolo en una página web con Pannellum**
-
-  
-
-  
 
 ## CONTEXTO
 
