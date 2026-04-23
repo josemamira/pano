@@ -122,7 +122,7 @@ Ejemplo con 2 hot spot:
 
 Y el resultado lo podéis ver en el siguiente enlace:
 
-[visor panorama](URL-del-enlace](https://josemamira.github.io/pano/index.html)
+[visor panorama](https://josemamira.github.io/pano/index.html)
   
 
 Saludos
