@@ -3,7 +3,10 @@
 Metodología para crear y publicar un panorama a partir de varias fotografías
 
 Para los indecisos aquí tenéis el enlace al panorama viewer
-[![ Enlace al panorama]([https://gist.github.com/cxmeel/0dbc95191f239b631c3874f4ccf114e2/raw/SERVICE.svg](https://gist.githubusercontent.com/cxmeel/0dbc95191f239b631c3874f4ccf114e2/raw/play.svg))]([https://example.com/...](https://josemamira.github.io/pano/index.html))
+
+[![Visor panorama](img/boton.png)]([https://www.google.com](https://josemamira.github.io/pano/index.html))
+
+
 
 **Crear un panorama utilizando varias fotografía con solape con Hugin y visualizándolo en una página web con Pannellum**
 
@@ -119,6 +122,7 @@ Ejemplo con 2 hot spot:
 
 Y el resultado lo podéis ver en el siguiente enlace:
 
+[visor panorama](URL-del-enlace](https://josemamira.github.io/pano/index.html)
   
 
 Saludos
