@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panorámica de Lleida - Pannellum</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" />
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #111;
+      color: #fff;
+    }
+
+    #panorama {
+      width: 100%;
+      height: 100vh;
+    }
+
+    .info-box {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      z-index: 10;
+      max-width: 360px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      line-height: 1.4;
+    }
+
+    .info-box h1 {
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+
+    .info-box p {
+      margin: 0;
+      font-size: 14px;
+      opacity: 0.95;
+    }
+
+    .custom-hotspot {
+      width: max-content;
+      max-width: 220px;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .custom-hotspot .dot {
+      width: 16px;
+      height: 16px;
+      margin: 0 auto 8px;
+      border-radius: 50%;
+      background: #ffcc00;
+      border: 2px solid #222;
+      box-shadow: 0 0 0 4px rgba(255, 204, 0, 0.28);
+    }
+
+    .custom-hotspot .label {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.72);
+      color: #fff;
+      font-size: 13px;
+      white-space: normal;
+    }
+
+    .pnlm-about-msg {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="info-box">
+    <h1>Lleida desde la torre de la Seu Vella</h1>
+    <p>Panorámica interactiva con algunos puntos de interés. Arrastra para moverte y haz clic en los hot spots para ver una breve descripción.</p>
+  </div>
+
+  <div id="panorama"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+  <script>
+    function hotspot(el, args) {
+      el.classList.add('custom-hotspot');
+      el.innerHTML = `
+        <div class="dot"></div>
+        <div class="label">${args.title}</div>
+      `;
+      el.addEventListener('click', function () {
+        alert(args.text);
+      });
+    }
+
+    const viewer = pannellum.viewer('panorama', {
+      type: 'equirectangular',
+      panorama: './lleida.jpg',
+      autoLoad: true,
+      showControls: true,
+      compass: false,
+      pitch: 2,
+      yaw: 0,
+      hfov: 95,
+      minHfov: 45,
+      maxHfov: 130,
+      haov: 240,
+      vaov: 65,
+      vOffset: 0,
+      hotSpots: [
+
+        {
+          pitch: 10,
+          yaw: -75,
+          cssClass: 'empty',
+          createTooltipFunc: hotspot,
+          createTooltipArgs: {
+            title: 'Pont del Princep de Viana',
+            text: 'Se trata de un puente diseñado por Javier Manterola sustentado con tirantes de acero, que en su totalidad da una sensación de ligereza y transparencia. Es un símbolo de la Lérida del siglo XXI. El proyecto se enmarca dentro del Plan Especial de la Estación de Lérida. El Plan General de la ciudad de Lérida, aprobado en 1995, estableció las líneas más orientativas sobre cuál había de ser el nuevo espacio urbanístico del área más cercana a la estación ferroviaria de la ciudad.'
+          }
+        },
+        {
+          pitch: 7.6,
+          yaw: -18,
+          cssClass: 'empty',
+          createTooltipFunc: hotspot,
+          createTooltipArgs: {
+            title: 'Parc fluvial del Segre',
+            text: 'Tras la riada de 1982 se propusieron ua mejoras para las defensas hidráulicas del río, en forma de una canalización del río a su paso por la ciudad, inclluida en el PG de 1994, en el que se contempla además un plan de espacios libres que se traduce en las amplias zonas ajardinadas que encontramos a ambos orillas del rio.'
+          }
+        },
+        {
+          pitch: -27.8,
+          yaw: -30,
+          cssClass: 'empty',
+          createTooltipFunc: hotspot,
+          createTooltipArgs: {
+            title: 'Plaça de Sant Joan',
+            text: 'La plaça de Sant Joan ha sido, desde hace siglos, un lugar emblemático de Lleida. Presidida por la Iglesia de Sant Joan y resguardada por la Seu Vella es un importante punto de encuentro tanto para los negocios como para el recreo y las actividades culturales.'
+          }
+        },
+        {
+          pitch: -8.47,
+          yaw: -5.44,
+          cssClass: 'empty',
+          createTooltipFunc: hotspot,
+          createTooltipArgs: {
+            title: 'Torre ascensor',
+            text: 'Torre de base triangular que incluye un ascensor que conecta la parte baja de la ciudad con el Turó de la Seu Vella salvando así la altura que las separa. De él parte una larga pasarela que comunica ambas partes'
+          }
+        },
+
+        {
+          pitch: 12.8,
+          yaw: -38.35,
+          cssClass: 'empty',
+          createTooltipFunc: hotspot,
+          createTooltipArgs: {
+            title: 'barrio Cappont',
+            text: 'Etimológicamente significa Cabeza de Puente y da nombre a un barrio nuevo ubicado en la margen izquierda del rio Segre, en los terrenos de una antiguo arrabal. El barrio está vertebrado por la avenguda de les Garrigues que parte del Pont Vell. En el año 1995 se inició la construcción en el barrio del nuevo campus de la Universidad de Lérida, con el traslado de las facultades de Derecho, Economía o Ciencias de la Educación y la construcción de una nueva biblioteca.'
+          }
+        },
+
+        {
+          pitch: 25,
+          yaw: -40,
+          cssClass: 'empty',
+          createTooltipFunc: hotspot,
+          createTooltipArgs: {
+            title: 'barrio Bordeta',
+            text: 'Creado tras la conquista de Lérida en 1149 con la denominación de Vilanova de l&acute;Horta. Es un barrio que creio desmesuradamente tras la Guerra Civil para acoger a las migraciones procentes del resto de España. Actualmente, y desde los años 90, es uno de los barrios emergentes de la ciudad en lo referente al crecimiento urbanístico y demográfico.  '
+          }
+        },
+        {
+          pitch: 18,
+          yaw: -6,
+          cssClass: 'empty',
+          createTooltipFunc: hotspot,
+          createTooltipArgs: {
+            title: 'Universitat de Lleida . Campus de Cappont',
+            text: 'En este campus que toma el nombre del barrio se encuentran los modenos edificios universitarios de del Centro de Cultura, diferentes facultades y Escuela Politécnica.'
+          }
+        },
+        {
+          pitch: 23,
+          yaw: 17,
+          cssClass: 'empty',
+          createTooltipFunc: hotspot,
+          createTooltipArgs: {
+            title: 'Castillo de Gardeny',
+            text: 'Enclave de carácter militar situado en lo alto de una colina. Perteneció a la Orden del Temple (Templarios). Fue reformado desde los siglos XVII para introducir pieza de artillería, además de fosos y murallas. Su objetivo fue controlar desde una posición elevada y con fuego de artillería la ciudad histórica.'
+          }
+        },
+        {
+          pitch: 28.5,
+          yaw: -11.11,
+          cssClass: 'empty',
+          createTooltipFunc: hotspot,
+          createTooltipArgs: {
+            title: 'LL12- Vial de acceso a la ciudad',
+            text: 'Vía que se une a la autopista AP-2 que conecta Zaragoza con Tarragona.'
+          }
+        },
+        {
+          pitch: -2.9,
+          yaw: 30,
+          cssClass: 'empty',
+          createTooltipFunc: hotspot,
+          createTooltipArgs: {
+            title: 'Casc Antic',
+            text: 'Zona urbana histórica delimitada por las murallas y el río. Actualmente es una zona relativamente decaída y con muchos edificios que se encuentran en mal estado de conservación. Sin embargo, se están proyectando un gran número de nuevas viviendas, como parte de una campaña de renovación urbanística que no se encuentra exenta de polémica, ya que ha puesto de manifiesto una situación de especulación inmobiliaria particularmente grave por ser la zona con la concentración más alta de inmigrantes, y principalmente habitada por personas de bajo poder adquisitivo.'
+          }
+        },
+        {
+          pitch: 17.4,
+          yaw: 62,
+          cssClass: 'empty',
+          createTooltipFunc: hotspot,
+          createTooltipArgs: {
+            title: 'Ciudad Jardín',
+            text: 'Barrio residencial relativamente moderno que se caracteriza por tener una de las rentas más altas de España (segundo detrás de la Moraleja). Está conformado por viviendas unifamiliares de alto standing y habitado por empresarios y funcionarios asociados al sector agropecuario.'
+          }
+        },
+        {
+          pitch: 13,
+          yaw: 54,
+          cssClass: 'empty',
+          createTooltipFunc: hotspot,
+          createTooltipArgs: {
+            title: 'Barrio Universitat',
+            text: 'Barrio donde se ubica la universidad histórica de Lleida. Está contiguo al Barrio Antic y delimitado por el vial Gran Passeig de Ronda y la Rambla de Aragón. Es una zona principalmente de clase media, aunque hay una fuerte presencia de inmigrantes que trabajan y viven allí. Dejando a un lado el edificio neogótico de la Universidad, no hay enclave importante, ya que es una zona que comenzó a urbanizarse durante los años setenta.'
+          }
+        },
+        {
+          pitch: 3.17,
+          yaw: 100,
+          cssClass: 'empty',
+          createTooltipFunc: hotspot,
+          createTooltipArgs: {
+            title: 'Príncep de Viana - Clot',
+            text: 'Barrio al norte ubicado a espaldas del Castell del Rei y las murallas de la Seu Vella.'
+          }
+        },
+        {
+          pitch: 20.26,
+          yaw: 54,
+          cssClass: 'empty',
+          createTooltipFunc: hotspot,
+          createTooltipArgs: {
+            title: 'AVE Madrid-Zaragoza-Barcelona',
+            text: 'Línea de alta velocidad'
+          }
+        },
+        {
+          pitch: 12.22,
+          yaw: 64.43,
+          cssClass: 'empty',
+          createTooltipFunc: hotspot,
+          createTooltipArgs: {
+            title: 'Campo de fútbol del Lleida',
+            text: 'Con capacidad para unos 13.000 espectadores y es propiedad del Ayuntamiento'
+          }
+        },
+        {
+          pitch: 1,
+          yaw: -100,
+          cssClass: 'empty',
+          createTooltipFunc: hotspot,
+          createTooltipArgs: {
+            title: 'Estación de Lleida - Pirineus',
+            text: 'Lleida es uno de los puntos clave en la alta velocidad española, sobre todo gracias a la estación de Lleida - Pirineus. Situada en la Plaça de Berenguer IV, dispone de servicios de Alta Velocidad, Larga Distancia, Media Distancia , correspondencia con las líneas RL1 y RL2 de Ferrocarrils de la Generalitat de Catalunya (FGC) y conexiones con la Estación de Autobuses de Lleida.'
+          }
+        },
+        {
+          pitch: -5,
+          yaw: -45,
+          cssClass: 'empty',
+          createTooltipFunc: hotspot,
+          createTooltipArgs: {
+            title: 'Río Segre',
+            text: 'Afluente del Ebro que nace en la vertiente septentrional del pico del Segre, en el municipio francés de Llo. Gira a poniente en el valle de la Cerdaña y entra en España por la provincia de Gerona. Está regulado por 3 embalses: Rialb, Oliana y el pequeño de San Lorenzo de Mongay.'
+          }
+        },
+        {
+          pitch: -0.29,
+          yaw: -32,
+          cssClass: 'empty',
+          createTooltipFunc: hotspot,
+          createTooltipArgs: {
+            title: 'Pont Vell',
+            text: 'Originalmente data del 47 a.C, hubo una reforma en 1911 pero durante la guerra civil española fue volado por el ejército republicano en 1939 antes de abandonar la ciudad. El actual data de 1944.El puente conecta la ciudad histórica con la nueva zona de expansión que conforman los barrios de Cappont y Bordeta.'
+          }
+        },
+        {
+          pitch: -2,
+          yaw: 56,
+          cssClass: 'empty',
+          createTooltipFunc: hotspot,
+          createTooltipArgs: {
+            title: 'Castillo del Rey / La Suda',
+            text: 'Dentro del conjunto monumental de la Seu Vella, La Suda es uno de los elementos históricos más destacados del cerro. Se trata de la alcazaba musulmana ubicada en la colina Desde el año 882 estaba ocupada por los sarracenos. Una vez conquistado por los cristianos fue sede de la corona de Aragón. En 1214, en este castillo, los nobles catalanes y aragoneses juraron fidelidad al infante Jaime, que se convertiría en el rey Jaime I "el Conquistador".'
+          }
+        },
+        {
+          pitch: -10,
+          yaw: 78,
+          cssClass: 'empty',
+          createTooltipFunc: hotspot,
+          createTooltipArgs: {
+            title: 'Murallas del Turó de la Seu Vella',
+            text: 'Las murallas y fortificaciones del cerro forman parte del perfil monumental más reconocible de Lleida.'
+          }
+        }
+      ]
+    });
+
+    // Mostrar coordenadas pitch y yaw al hacer clic
+    viewer.on('mousedown', function(event) {
+      const coords = viewer.mouseEventToCoords(event);
+      console.log('Pitch:', coords[0].toFixed(2), 'Yaw:', coords[1].toFixed(2));
+    });
+  </script>
+</body>
+</html>
+
