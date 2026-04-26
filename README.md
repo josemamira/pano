@@ -124,5 +124,8 @@ Y el resultado lo podéis ver en el siguiente enlace:
 
 [visor panorama](https://josemamira.github.io/pano/index.html)
   
+Si usas un móvil no podrás ver el panorama por la limitación de la pantalla. Usa este enlace donde hemos reescalado la imagen al 50%
+
+[visor panorama móvil](https://josemamira.github.io/pano/index2.html)
 
 Saludos
