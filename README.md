@@ -78,11 +78,11 @@ Obviamente la salida tiene errores de bulto como parte del torreón en los later
 
   
 
-No tiene mucho sentido crear un panorama sino tienes una interfaz de usuario para sacarle punta a las peculiaridades de un archivo como este. Entre las opciones existentes opté por publicar el panorama en una página web que utiliza una utilidad en lenguaje Javascript denominada “Pannellum”, y tal como dice su portal web se trata de un visor para la web de código abirerto, libre y ligero. Utiliza HTML5, CSS3, JavaScript, y WebG.
+No tiene mucho sentido crear un panorama sino tienes una interfaz de usuario para sacarle punta a las peculiaridades de un archivo como este. Entre las opciones existentes opté por publicar el panorama en una página web que utiliza una utilidad en lenguaje Javascript denominada “**Pannellum**”, y tal como dice su portal web se trata de un visor para la web de código abirerto, libre y ligero. Utiliza HTML5, CSS3, JavaScript, y WebGL.
 
 Pannellum nos permite navegar por el panorama como su estuviesemos en directo en pleno torreón. Podemos hacer zoom, pan al igual que cualquier mapa.
 
-Uno de los aspectos que más me llama la atención es la posibilidad de añadir “hot spot” a la imagen. Estos elementos son iconos subrepuestos a la imagen que al hacer clic se lanza un evento, que puede ser lo que quieras. En mi caso he añadido un pequeño bocadillo (popup) con una breve descripción.
+Uno de los aspectos que más me llama la atención es la posibilidad de añadir “**hot spot**” a la imagen. Estos elementos son iconos subrepuestos a la imagen que al hacer clic se lanza un evento, que puede ser lo que quieras. En mi caso he añadido un pequeño bocadillo (popup) con una breve descripción.
 
 Cada hot spot precisa de 2 elementos claves, como es su “Pitch” y “Yaw”. Estos son términos utilizados en aeronáutica para definir las rotaciones de un objeto en un espacio tridimensional. El **pitch** es el cabeceo, osea la inclinación de un objeto hacia arriba o abajo, mientras que el **yaw** es la guiñada, es decir el movimiento a la izquierda o derecha con respecto a su eje vertical. Visto de otra forma equivale a las coordenadas de la imagen teniendo en cuenta que existe un eje de coordenadas cuyo origen es el centro del fotograma, de forma que el pitch sería el equivalente a la longitud, siendo positiva en la mitad superior y negativa en la inferior. Por otra parte el yaw es el equivalente a la latitud, siendo positiva al este y negativa al oeste.
 
@@ -90,7 +90,7 @@ He optado por crearlos a mano añadiendo una pequeña utilidad en el código (co
 
 ![](img/img4.png)  
 
-Estos valores los utilizo para crear hot spot en el código fuente. Cada uno de ellos tiene este contenido en una estructura en formato JSON (a algunos me imagino que les recordará a nuestro GeoJSON)
+Estos valores los utilizo para crear hot spot en el código fuente. Cada uno de ellos tiene este contenido en una estructura en formato **JSON** (a algunos me imagino que les recordará a nuestro **GeoJSON**)
 
 Ejemplo con 2 hot spot:
 
@@ -124,7 +124,7 @@ Y el resultado lo podéis ver en el siguiente enlace:
 
 [visor panorama](https://josemamira.github.io/pano/index.html)
   
-Si usas un móvil no podrás ver el panorama por la limitación de la pantalla. Usa este enlace donde hemos reescalado la imagen al 50%
+Si usas un móvil con una pantalla con poca resolución no podrás ver el panorama por la limitación de la pantalla. Usa este enlace donde hemos reescalado la imagen al 50%
 
 [visor panorama móvil](https://josemamira.github.io/pano/index2.html)
 
